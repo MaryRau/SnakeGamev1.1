@@ -22,7 +22,7 @@ namespace SnakeGame
         public RecordListWindow()
         {
             InitializeComponent();
-            DataGridRecords.ItemsSource = Entities.GetContext().Records.OrderByDescending(x => x.Record).Take(5).ToList();
+            DataGridRecords.ItemsSource = Entities.GetContext().Records.Where(x => x.Record > 0).OrderByDescending(x => x.Record).Take(5).ToList();
         }
 
         /*private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
