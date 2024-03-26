@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SnakeGame"
         mc:Ignorable="d"
-        Title="RecordListWindow" Height="669" Width="646" Background="#FFB9E466">
+        Title="RecordListWindow" Height="669" Width="646">
     <Grid>
         <Grid.ColumnDefinitions>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" Name="DataGridRecords" AutoGenerateColumns="False" IsReadOnly="True">
+        <DataGrid Grid.Row="0" RowHeight="110" Name="DataGridRecords" AutoGenerateColumns="False" IsReadOnly="True" Background="#FFB9E466">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
-                <DataGridTextColumn Header="Record" Binding="{Binding Record}" Width="*"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" FontSize="36"/>
+                <DataGridTextColumn Header="Record" Binding="{Binding Record}" Width="*" FontSize="36"/>
             </DataGrid.Columns>
         </DataGrid>
 
