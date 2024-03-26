@@ -40,7 +40,7 @@ namespace SnakeGame
         private void btnNewPlayer_Click(object sender, RoutedEventArgs e)
         {
             bool flag = true;
-            if (string.IsNullOrWhiteSpace(txtNewPlayer.Text) || txtNewPlayer.Text == "Новый игрок")
+            if (string.IsNullOrWhiteSpace(txtNewPlayer.Text))
             {
                 MessageBox.Show("Введите никнейм!");
                 txtNewPlayer.Text = "";
@@ -48,20 +48,6 @@ namespace SnakeGame
             
             else
             {
-                /*if (_currentPlayer.id == 0)
-                {
-                    _currentPlayer.Record = mainWindow.maxScore;
-                    Entities.GetContext().Records.Add(_currentPlayer);
-                }
-
-                else if (_currentPlayer.id == 0 && txtNewPlayer.Text != mainWindow.name)
-                {
-                    _currentPlayer.Record = mainWindow.Score;
-                    Entities.GetContext().Records.Add(_currentPlayer);
-                    mainWindow.maxScore = 0;
-                }*/
-
-
                 try
                 {
                     _currentPlayer.Record = mainWindow.Score;
@@ -87,7 +73,6 @@ namespace SnakeGame
 
                     Entities.GetContext().SaveChanges();
                     mainWindow.name = txtNewPlayer.Text;
-                    MessageBox.Show($"Пользователь {_currentPlayer.Name} добавлен с рекордом {_currentPlayer.Record}");
                     this.Close();
                 }
                 catch (Exception)
